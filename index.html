@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zozi Atul Azimi | AI Engineer & Data Science Specialist</title>
+    <meta name="description" content="Official Digital Portfolio of Zozi Atul Azimi - AI Engineer, Machine Learning Specialist, and Python Developer with verified certifications from Microsoft Elevate, Dicoding Indonesia, and BISA AI Academy.">
+    <meta name="author" content="Zozi Atul Azimi">
+    <meta name="keywords" content="Zozi Atul Azimi, AI Engineer, Data Scientist, Machine Learning, Python Developer, Portfolio, AI Certificates, Microsoft Elevate, Dicoding">
+
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Zozi Atul Azimi | AI & Data Science Specialist Portfolio">
+    <meta property="og:description" content="Explore verified AI & ML credentials, Python architectures, and data science projects of Zozi Atul Azimi.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            cyan: '#06b6d4',
+                            indigo: '#6366f1',
+                            violet: '#8b5cf6',
+                            emerald: '#10b981',
+                            darkbg: '#0a0d14',
+                            darkcard: '#111726',
+                            darkborder: '#1f293d'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#0a0d14] text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-white transition-colors duration-300 relative overflow-x-hidden">
+
+    <!-- Particle / Canvas Interactive Background -->
+    <canvas id="bg-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+    <!-- Background Ambient Glows -->
+    <div class="fixed top-[-10%] left-[-10%] w-[45vw] h-[45vw] rounded-full bg-cyan-600/15 blur-[120px] pointer-events-none z-0"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[45vw] h-[45vw] rounded-full bg-indigo-600/15 blur-[130px] pointer-events-none z-0"></div>
+    <div class="fixed top-[40%] right-[15%] w-[35vw] h-[35vw] rounded-full bg-violet-600/10 blur-[140px] pointer-events-none z-0"></div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#0a0d14]/80 border-b border-slate-800/60 transition-all duration-300" id="main-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-500 to-violet-500 p-0.5 shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full bg-[#0a0d14] rounded-[10px] flex items-center justify-center">
+                            <span class="font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400 font-mono">Z</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-lg tracking-tight text-white group-hover:text-cyan-400 transition-colors">Zozi Atul Azimi</span>
+                        <span class="text-xs text-cyan-400/80 font-mono">AI & Data Science Specialist</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Items -->
+                <nav class="hidden lg:flex items-center gap-1 bg-slate-900/60 border border-slate-800/80 rounded-full px-4 py-1.5 backdrop-blur-md">
+                    <a href="#home" class="nav-link px-3.5 py-1.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-all" data-i18n="nav_home">Home</a>
+                    <a href="#about" class="nav-link px-3.5 py-1.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-all" data-i18n="nav_about">About</a>
+                    <a href="#skills" class="nav-link px-3.5 py-1.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-all" data-i18n="nav_skills">Skills</a>
+                    <a href="#certificates" class="nav-link px-3.5 py-1.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-all flex items-center gap-1.5">
+                        <span data-i18n="nav_certificates">Credentials</span>
+                        <span class="inline-flex items-center justify-center px-1.5 py-0.2 text-[10px] font-semibold bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">5</span>
+                    </a>
+                    <a href="#projects" class="nav-link px-3.5 py-1.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-all" data-i18n="nav_projects">Projects</a>
+                    <a href="#milestones" class="nav-link px-3.5 py-1.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-all" data-i18n="nav_milestones">Roadmap</a>
+                    <a href="#contact" class="nav-link px-3.5 py-1.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-all" data-i18n="nav_contact">Contact</a>
+                </nav>
+
+                <!-- Actions: Language Switcher & Credentials Button -->
+                <div class="hidden md:flex items-center gap-3">
+                    <!-- Language Switcher Pill -->
+                    <div class="flex items-center p-1 rounded-full bg-slate-900 border border-slate-800 shadow-inner">
+                        <button id="lang-btn-en" class="px-3 py-1 rounded-full text-xs font-semibold transition-all flex items-center gap-1">
+                            <span>🇬🇧</span>
+                            <span>EN</span>
+                        </button>
+                        <button id="lang-btn-id" class="px-3 py-1 rounded-full text-xs font-semibold transition-all flex items-center gap-1">
+                            <span>🇮🇩</span>
+                            <span>ID</span>
+                        </button>
+                    </div>
+
+                    <a href="#certificates" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-400 hover:from-cyan-300 hover:to-indigo-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all">
+                        <i class="fa-solid fa-award"></i>
+                        <span data-i18n="nav_btn_credentials">View Credentials</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Header Right Elements -->
+                <div class="flex md:hidden items-center gap-2">
+                    <!-- Mobile Language Switcher -->
+                    <div class="flex items-center p-0.5 rounded-full bg-slate-900 border border-slate-800">
+                        <button id="mob-lang-en" class="px-2.5 py-1 rounded-full text-xs font-semibold transition-all">EN</button>
+                        <button id="mob-lang-id" class="px-2.5 py-1 rounded-full text-xs font-semibold transition-all">ID</button>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-toggle" aria-label="Toggle menu" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white">
+                        <i class="fa-solid fa-bars text-lg" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-[#0a0d14]/95 backdrop-blur-2xl px-6 py-5 space-y-3">
+            <a href="#home" class="mobile-nav-link block py-2 text-slate-300 hover:text-cyan-400 font-medium" data-i18n="nav_home">Home</a>
+            <a href="#about" class="mobile-nav-link block py-2 text-slate-300 hover:text-cyan-400 font-medium" data-i18n="nav_about">About</a>
+            <a href="#skills" class="mobile-nav-link block py-2 text-slate-300 hover:text-cyan-400 font-medium" data-i18n="nav_skills">Skills</a>
+            <a href="#certificates" class="mobile-nav-link block py-2 text-slate-300 hover:text-cyan-400 font-medium flex items-center justify-between">
+                <span data-i18n="nav_certificates">Credentials</span>
+                <span class="px-2 py-0.5 text-xs bg-cyan-500/20 text-cyan-300 rounded-full" data-i18n="nav_cert_count">5 Verified</span>
+            </a>
+            <a href="#projects" class="mobile-nav-link block py-2 text-slate-300 hover:text-cyan-400 font-medium" data-i18n="nav_projects">Projects</a>
+            <a href="#milestones" class="mobile-nav-link block py-2 text-slate-300 hover:text-cyan-400 font-medium" data-i18n="nav_milestones">Roadmap</a>
+            <a href="#contact" class="mobile-nav-link block py-2 text-slate-300 hover:text-cyan-400 font-medium" data-i18n="nav_contact">Contact</a>
+            <div class="pt-3 border-t border-slate-800">
+                <a href="#certificates" class="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-cyan-400 to-indigo-500 text-slate-900 font-semibold">
+                    <i class="fa-solid fa-certificate"></i>
+                    <span data-i18n="nav_explore_cert">Explore Credentials</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+        <!-- HERO SECTION -->
+        <section id="home" class="min-h-[92vh] flex items-center justify-center pt-8 pb-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto w-full text-center">
+                
+                <!-- Status Pill -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-900/80 border border-cyan-500/30 text-cyan-300 text-xs sm:text-sm font-mono mb-8 backdrop-blur-md shadow-inner shadow-cyan-500/10 hover:border-cyan-400 transition-colors animate-fade-in">
+                    <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 absolute"></span>
+                    <span data-i18n="hero_status">Available for AI, Data Science & Software Engineering Roles</span>
+                </div>
+
+                <!-- Main Name & Title -->
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                    <span data-i18n="hero_title_1">Architecting Next-Gen</span> <br class="hidden sm:inline">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400 glow-text" data-i18n="hero_title_gradient">
+                        Artificial Intelligence & Data
+                    </span>
+                    <br class="hidden sm:inline"> <span data-i18n="hero_title_2">Solutions End-to-End.</span>
+                </h1>
+
+                <!-- Typed Role Subheading -->
+                <div class="flex items-center justify-center gap-2 text-lg sm:text-2xl font-mono text-slate-300 mb-8 min-h-[36px]">
+                    <span class="text-cyan-400">&gt;</span>
+                    <span id="typed-text" class="text-slate-200 border-r-2 border-cyan-400 pr-1"></span>
+                </div>
+
+                <!-- Bio Description -->
+                <p class="max-w-3xl mx-auto text-base sm:text-lg text-slate-400 leading-relaxed mb-10" data-i18n="hero_bio">
+                    Hi! I'm <strong class="text-white font-semibold">Zozi Atul Azimi</strong> — an AI Engineer & Data Science Specialist focused on building resilient <span class="text-cyan-300 font-medium">Machine Learning pipelines</span>, deep predictive models, and clean <span class="text-indigo-300 font-medium">Python architectures</span> from raw datasets to production deployment.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-5 mb-16">
+                    <a href="#certificates" class="px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-indigo-500 to-violet-600 text-white font-semibold text-base shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-1 transition-all flex items-center gap-3">
+                        <i class="fa-solid fa-shield-halved text-cyan-200"></i>
+                        <span data-i18n="hero_btn_cert">View Verified Certificates</span>
+                    </a>
+                    <a href="#projects" class="px-8 py-4 rounded-2xl bg-slate-900/90 border border-slate-700 hover:border-slate-500 text-slate-200 hover:text-white font-semibold text-base backdrop-blur-md hover:-translate-y-1 transition-all flex items-center gap-3">
+                        <i class="fa-solid fa-code-branch text-slate-400"></i>
+                        <span data-i18n="hero_btn_projects">Explore Projects</span>
+                    </a>
+                    <a href="#contact" class="px-6 py-4 rounded-2xl bg-slate-800/40 border border-slate-700/60 hover:border-cyan-500/40 text-slate-300 hover:text-cyan-300 text-base transition-all flex items-center gap-2">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span data-i18n="hero_btn_contact">Get in Touch</span>
+                    </a>
+                </div>
+
+                <!-- Stats Quick Cards -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+                    <div class="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md hover:border-cyan-500/40 transition-all hover:bg-slate-900/90 group">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400 font-mono group-hover:scale-105 transition-transform origin-left">5+</div>
+                        <div class="text-xs sm:text-sm font-semibold text-white mt-1" data-i18n="hero_stat1_title">Industry Certifications</div>
+                        <div class="text-xs text-slate-400 mt-0.5" data-i18n="hero_stat1_sub">Microsoft, Dicoding, BISA AI</div>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md hover:border-indigo-500/40 transition-all hover:bg-slate-900/90 group">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-indigo-400 font-mono group-hover:scale-105 transition-transform origin-left">100%</div>
+                        <div class="text-xs sm:text-sm font-semibold text-white mt-1" data-i18n="hero_stat2_title">End-to-End AI Focus</div>
+                        <div class="text-xs text-slate-400 mt-0.5" data-i18n="hero_stat2_sub">Raw data to model inference</div>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md hover:border-violet-500/40 transition-all hover:bg-slate-900/90 group">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-violet-400 font-mono group-hover:scale-105 transition-transform origin-left">Core</div>
+                        <div class="text-xs sm:text-sm font-semibold text-white mt-1" data-i18n="hero_stat3_title">Python Ecosystem</div>
+                        <div class="text-xs text-slate-400 mt-0.5" data-i18n="hero_stat3_sub">Pandas, Scikit, PyTorch</div>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md hover:border-emerald-500/40 transition-all hover:bg-slate-900/90 group">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono group-hover:scale-105 transition-transform origin-left">2026+</div>
+                        <div class="text-xs sm:text-sm font-semibold text-white mt-1" data-i18n="hero_stat4_title">Up-to-Date Standards</div>
+                        <div class="text-xs text-slate-400 mt-0.5" data-i18n="hero_stat4_sub">Certified 2026+ Frameworks</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-800/60 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-cyan-400 font-mono text-sm tracking-wider uppercase bg-cyan-950/60 px-3.5 py-1 rounded-full border border-cyan-800/60" data-i18n="about_badge">About Me</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mt-4 mb-4" data-i18n="about_heading">Dedicated to Advancing Artificial Intelligence & Software Engineering</h2>
+                    <p class="text-slate-400 text-base" data-i18n="about_lead">Bridging mathematical foundations, analytical data processing, and clean programming logic to create impactful intelligent systems.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    <!-- Left Column: Story & Philosophy -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="p-8 rounded-3xl bg-slate-900/70 border border-slate-800 backdrop-blur-xl relative overflow-hidden group hover:border-slate-700 transition-all">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                            <h3 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                                <i class="fa-solid fa-user-astronaut text-cyan-400"></i>
+                                <span data-i18n="about_card_title">Professional Profile & Engineering Philosophy</span>
+                            </h3>
+                            <p class="text-slate-300 leading-relaxed mb-4" data-i18n="about_card_p1">
+                                I am a technology practitioner specializing in <strong class="text-white">Artificial Intelligence</strong> and <strong class="text-white">Data Science</strong>, holding verified credentials from world-class industry institutions including <span class="text-cyan-300">Microsoft Elevate</span>, <span class="text-indigo-300">Dicoding Indonesia</span>, and <span class="text-violet-300">BISA AI Academy</span>.
+                            </p>
+                            <p class="text-slate-300 leading-relaxed mb-6" data-i18n="about_card_p2">
+                                My core expertise centers on building automated data pipelines, training and fine-tuning machine learning / deep learning architectures, and deploying end-to-end solutions that solve complex computational and business challenges.
+                            </p>
+
+                            <!-- Key Pillars -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-800">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-9 h-9 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 flex-shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-brain text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-white" data-i18n="about_pillar1_title">End-to-End AI Solutions</h4>
+                                        <p class="text-xs text-slate-400" data-i18n="about_pillar1_desc">From exploratory data analysis to integrated model deployment.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="w-9 h-9 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 flex-shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-code text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-white" data-i18n="about_pillar2_title">Clean Pythonic Code</h4>
+                                        <p class="text-xs text-slate-400" data-i18n="about_pillar2_desc">Modular, performant, readable, and production-ready codebases.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="w-9 h-9 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 flex-shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-chart-pie text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-white" data-i18n="about_pillar3_title">Data-Driven Decisions</h4>
+                                        <p class="text-xs text-slate-400" data-i18n="about_pillar3_desc">Comprehensive insights grounded in statistical rigor.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 flex-shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-rotate text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-white" data-i18n="about_pillar4_title">Continuous Evolution</h4>
+                                        <p class="text-xs text-slate-400" data-i18n="about_pillar4_desc">Rapidly adopting cutting-edge AI breakthroughs and tooling.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Highlights & Quick Details -->
+                    <div class="lg:col-span-5 space-y-5">
+                        <div class="p-6 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800/90 shadow-xl space-y-4">
+                            <h4 class="text-lg font-bold text-white flex items-center justify-between">
+                                <span data-i18n="about_info_title">Key Information</span>
+                                <span class="text-xs font-mono text-cyan-400 bg-cyan-950/80 px-2.5 py-1 rounded-md border border-cyan-800" data-i18n="about_info_badge">Verified</span>
+                            </h4>
+                            
+                            <ul class="space-y-3.5 text-sm">
+                                <li class="flex items-center justify-between pb-3 border-b border-slate-800/60">
+                                    <span class="text-slate-400"><i class="fa-solid fa-signature text-slate-500 mr-2"></i><span data-i18n="about_info_name_lbl">Full Name:</span></span>
+                                    <span class="text-white font-medium">Zozi Atul Azimi</span>
+                                </li>
+                                <li class="flex items-center justify-between pb-3 border-b border-slate-800/60">
+                                    <span class="text-slate-400"><i class="fa-solid fa-laptop-code text-slate-500 mr-2"></i><span data-i18n="about_info_spec_lbl">Specialization:</span></span>
+                                    <span class="text-cyan-300 font-mono text-xs">AI & Data Science</span>
+                                </li>
+                                <li class="flex items-center justify-between pb-3 border-b border-slate-800/60">
+                                    <span class="text-slate-400"><i class="fa-solid fa-terminal text-slate-500 mr-2"></i><span data-i18n="about_info_lang_lbl">Primary Languages:</span></span>
+                                    <span class="text-white font-mono text-xs">Python, SQL, Shell</span>
+                                </li>
+                                <li class="flex items-center justify-between pb-3 border-b border-slate-800/60">
+                                    <span class="text-slate-400"><i class="fa-solid fa-certificate text-slate-500 mr-2"></i><span data-i18n="about_info_cert_lbl">Key Certifications:</span></span>
+                                    <span class="text-indigo-300 text-xs" data-i18n="about_info_cert_val">Microsoft Elevate & Dicoding</span>
+                                </li>
+                                <li class="flex items-center justify-between">
+                                    <span class="text-slate-400"><i class="fa-solid fa-signal text-slate-500 mr-2"></i><span data-i18n="about_info_status_lbl">Availability:</span></span>
+                                    <span class="inline-flex items-center gap-1.5 text-emerald-400 text-xs font-semibold">
+                                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                        <span data-i18n="about_info_status_val">Open for Collaboration</span>
+                                    </span>
+                                </li>
+                            </ul>
+
+                            <div class="pt-4">
+                                <a href="#contact" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold text-center block transition-all" data-i18n="about_btn_collab">
+                                    Start Collaboration
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Quote / Core Statement -->
+                        <div class="p-6 rounded-3xl bg-gradient-to-r from-cyan-950/40 via-indigo-950/30 to-slate-900 border border-cyan-500/20 text-slate-300 text-sm italic relative">
+                            <i class="fa-solid fa-quote-left text-cyan-500/30 text-3xl absolute top-4 left-4 pointer-events-none"></i>
+                            <p class="relative z-10 pl-6" data-i18n="about_quote">
+                                "Artificial Intelligence is not just about algorithms; it is the bridge that transforms raw data into intelligent, automated decisions that empower humanity."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-950/60 border-t border-slate-800/60 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-indigo-400 font-mono text-sm tracking-wider uppercase bg-indigo-950/60 px-3.5 py-1 rounded-full border border-indigo-800/60" data-i18n="skills_badge">Tech Stack & Competencies</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mt-4 mb-4" data-i18n="skills_heading">Mastery of Modern Tools & Frameworks</h2>
+                    <p class="text-slate-400 text-base" data-i18n="skills_lead">Technologies, libraries, and methodologies I leverage to design and deploy scalable intelligent software.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Skill Card 1: AI & Machine Learning -->
+                    <div class="p-7 rounded-3xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 transition-all hover:shadow-xl hover:shadow-cyan-500/5 group flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2" data-i18n="skills_card1_title">Artificial Intelligence & ML</h3>
+                            <p class="text-slate-400 text-sm mb-6" data-i18n="skills_card1_desc">In-depth understanding of AI concepts, machine learning algorithms, and deep neural network workflows.</p>
+                            
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+                                        <span>Machine Learning Fundamentals</span>
+                                        <span class="text-cyan-400">92%</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-gradient-to-r from-cyan-500 to-sky-400 h-full rounded-full" style="width: 92%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+                                        <span>Deep Learning & Neural Nets</span>
+                                        <span class="text-cyan-400">85%</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-gradient-to-r from-cyan-500 to-sky-400 h-full rounded-full" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+                                        <span>End-to-End AI Solution</span>
+                                        <span class="text-cyan-400">90%</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-gradient-to-r from-cyan-500 to-sky-400 h-full rounded-full" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-slate-800">
+                            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-cyan-950/60 text-cyan-300 border border-cyan-800/40">Scikit-Learn</span>
+                            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-cyan-950/60 text-cyan-300 border border-cyan-800/40">Neural Nets</span>
+                            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-cyan-950/60 text-cyan-300 border border-cyan-800/40">PyTorch</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 2: Python Development -->
+                    <div class="p-7 rounded-3xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500/40 transition-all hover:shadow-xl hover:shadow-indigo-500/5 group flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-python"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2" data-i18n="skills_card2_title">Python Engineering</h3>
+                            <p class="text-slate-400 text-sm mb-6" data-i18n="skills_card2_desc">Core Python proficiency, Object-Oriented design, scripting, and automation pipelines.</p>
+                            
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+                                        <span>Python Core & OOP</span>
+                                        <span class="text-indigo-400">95%</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-gradient-to-r from-indigo-500 to-purple-400 h-full rounded-full" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+                                        <span>Automation & Scripting</span>
+                                        <span class="text-indigo-400">90%</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-gradient-to-r from-indigo-500 to-purple-400 h-full rounded-full" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+                                        <span>Algorithm & Data Structures</span>
+                                        <span class="text-indigo-400">88%</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-gradient-to-r from-indigo-500 to-purple-400 h-full rounded-full" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-slate-800">
+                            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-indigo-950/60 text-indigo-300 border border-indigo-800/40">Python 3.x</span>
+                            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-indigo-950/60 text-indigo-300 border border-indigo-800/40">FastAPI</span>
+                            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-indigo-950/60 text-indigo-300 border border-indigo-800/40">PyPDF/PyMuPDF</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 3: Data Science & Analytics -->
+                    <div class="p-7 rounded-3xl bg-slate-900/80 border border-slate-800 hover:border-violet-500/40 transition-all hover:shadow-xl hover:shadow-violet-500/5 group flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-violet-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2" data-i18n="skills_card3_title">Data Science & Analytics</h3>
+                            <p class="text-slate-400 text-sm mb-6" data-i18n="skills_card3_desc">Exploratory Data Analysis (EDA), automated data cleaning, statistical modeling, and visualization.</p>
+                            
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+                                        <span>Data Wrangling & Pandas</span>
+                                        <span class="text-violet-400">92%</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-gradient-to-r from-violet-500 to-pink-400 h-full rounded-full" style="width: 92%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+                                        <span>Feature Engineering</span>
+                                        <span class="text-violet-400">86%</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-gradient-to-r from-violet-500 to-pink-400 h-full rounded-full" style="width: 86%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+                                        <span>Statistical Insights</span>
+                                        <span class="text-violet-400">88%</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-gradient-to-r from-violet-500 to-pink-400 h-full rounded-full" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-slate-800">
+                            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-violet-950/60 text-violet-300 border border-violet-800/40">Pandas</span>
+                            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-violet-950/60 text-violet-300 border border-violet-800/40">NumPy</span>
+                            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-violet-950/60 text-violet-300 border border-violet-800/40">Matplotlib</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools Badge Grid -->
+                <div class="mt-12 p-8 rounded-3xl bg-slate-900/50 border border-slate-800 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-slate-400 text-sm">
+                    <div class="flex items-center gap-2 hover:text-cyan-400 transition-colors">
+                        <i class="fa-brands fa-git-alt text-xl text-orange-500"></i>
+                        <span>Git & GitHub</span>
+                    </div>
+                    <div class="flex items-center gap-2 hover:text-cyan-400 transition-colors">
+                        <i class="fa-brands fa-microsoft text-xl text-blue-400"></i>
+                        <span>Microsoft Elevate</span>
+                    </div>
+                    <div class="flex items-center gap-2 hover:text-cyan-400 transition-colors">
+                        <i class="fa-solid fa-code text-xl text-indigo-400"></i>
+                        <span>VS Code</span>
+                    </div>
+                    <div class="flex items-center gap-2 hover:text-cyan-400 transition-colors">
+                        <i class="fa-solid fa-book-open text-xl text-orange-400"></i>
+                        <span>Jupyter & Colab</span>
+                    </div>
+                    <div class="flex items-center gap-2 hover:text-cyan-400 transition-colors">
+                        <i class="fa-solid fa-database text-xl text-emerald-400"></i>
+                        <span>SQL & Databases</span>
+                    </div>
+                    <div class="flex items-center gap-2 hover:text-cyan-400 transition-colors">
+                        <i class="fa-solid fa-terminal text-xl text-yellow-400"></i>
+                        <span>PowerShell & Linux CLI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS & CREDENTIALS VAULT -->
+        <section id="certificates" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-800/60 relative">
+            <div class="max-w-7xl mx-auto">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-cyan-400 font-mono text-sm tracking-wider uppercase bg-cyan-950/60 px-3.5 py-1 rounded-full border border-cyan-800/60" data-i18n="cert_badge">Official Credentials</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mt-4 mb-4" data-i18n="cert_heading">Verified Certifications & Licenses</h2>
+                    <p class="text-slate-400 text-base" data-i18n="cert_lead">Official completion and competency certificates issued by leading technology academies to <strong class="text-white font-semibold">Zozi Atul Azimi</strong>.</p>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12" id="cert-filter-container">
+                    <button class="cert-filter-btn active px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20 transition-all" data-filter="all" data-i18n="cert_tab_all">
+                        All Credentials (5)
+                    </button>
+                    <button class="cert-filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 transition-all" data-filter="ai" data-i18n="cert_tab_ai">
+                        Artificial Intelligence
+                    </button>
+                    <button class="cert-filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 transition-all" data-filter="data-science" data-i18n="cert_tab_ds">
+                        Data Science & ML
+                    </button>
+                    <button class="cert-filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 transition-all" data-filter="python" data-i18n="cert_tab_py">
+                        Python Development
+                    </button>
+                </div>
+
+                <!-- Certificates Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="cert-grid">
+
+                    <!-- CERT 1: Microsoft Elevate & Dicoding -->
+                    <div class="cert-card group bg-slate-900/80 border border-slate-800/90 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10 flex flex-col justify-between" data-category="ai data-science">
+                        <div>
+                            <!-- Image Thumbnail Box -->
+                            <div class="relative overflow-hidden bg-slate-950 aspect-[4/3] border-b border-slate-800/80">
+                                <img src="assets/images/ONLDCC6ZDW_page_1.png" alt="Microsoft Elevate x Dicoding Certificate" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 cursor-pointer cert-preview-trigger" data-img="assets/images/ONLDCC6ZDW_page_1.png" data-pdf="assets/certificates/ONLDCC6ZDW.pdf" data-title="Menerapkan Data Science untuk Solusi Model AI secara End to End" data-issuer="Microsoft Elevate x Dicoding" data-id="ONLDCC6ZDW" data-date="24 August 2026">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                                
+                                <!-- Floating Badges -->
+                                <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-900/80 border border-blue-400/40 text-blue-200 text-xs font-semibold backdrop-blur-md">
+                                    <i class="fa-brands fa-microsoft"></i>
+                                    <span>Microsoft Elevate</span>
+                                </div>
+                                <div class="absolute top-3.5 right-3.5 flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-400 text-xs font-mono backdrop-blur-md">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span>Verified</span>
+                                </div>
+
+                                <!-- Quick Preview Overlay Button -->
+                                <button class="cert-preview-trigger absolute bottom-3 right-3 px-3 py-1.5 rounded-xl bg-slate-900/90 text-white text-xs font-medium border border-slate-700 hover:bg-cyan-500 hover:text-slate-950 transition-colors flex items-center gap-1.5 shadow-lg" data-img="assets/images/ONLDCC6ZDW_page_1.png" data-pdf="assets/certificates/ONLDCC6ZDW.pdf" data-title="Menerapkan Data Science untuk Solusi Model AI secara End to End" data-issuer="Microsoft Elevate x Dicoding" data-id="ONLDCC6ZDW" data-date="24 August 2026">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                    <span data-i18n="cert_btn_view">View Full</span>
+                                </button>
+                            </div>
+
+                            <!-- Card Body -->
+                            <div class="p-6">
+                                <div class="text-xs font-mono text-cyan-400 mb-2 flex items-center justify-between">
+                                    <span>ID: ONLDCC6ZDW</span>
+                                    <span>24 Aug 2026</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors mb-2 leading-snug">
+                                    Menerapkan Data Science untuk Solusi Model AI secara End to End
+                                </h3>
+                                <p class="text-slate-400 text-xs sm:text-sm line-clamp-3 mb-4">
+                                    Microsoft Elevate Training Center Skill Sprint program focused on implementing end-to-end data science pipelines into comprehensive AI architectures.
+                                </p>
+
+                                <div class="flex items-center gap-2 text-xs text-slate-400 pt-3 border-t border-slate-800/80">
+                                    <i class="fa-solid fa-user-tie text-slate-500"></i>
+                                    <span>Director: <strong>Arief Suseno</strong> (Microsoft Indonesia)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Footer Action Buttons -->
+                        <div class="p-6 pt-0 flex items-center gap-3">
+                            <a href="assets/certificates/ONLDCC6ZDW.pdf" target="_blank" class="flex-1 py-2.5 px-4 rounded-xl bg-cyan-500/10 hover:bg-cyan-500 text-cyan-300 hover:text-slate-950 border border-cyan-500/30 text-xs font-semibold text-center transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-file-pdf"></i>
+                                <span data-i18n="cert_btn_open_pdf">Open PDF Document</span>
+                            </a>
+                            <a href="assets/certificates/ONLDCC6ZDW.pdf" download="Certificate_Microsoft_Zozi_Atul_Azimi.pdf" class="py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs transition-colors" title="Download PDF">
+                                <i class="fa-solid fa-download"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CERT 2: Dicoding Indonesia (Belajar Dasar AI) -->
+                    <div class="cert-card group bg-slate-900/80 border border-slate-800/90 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10 flex flex-col justify-between" data-category="ai">
+                        <div>
+                            <!-- Image Thumbnail Box -->
+                            <div class="relative overflow-hidden bg-slate-950 aspect-[4/3] border-b border-slate-800/80">
+                                <img src="assets/images/sertifikat-dasar-ai-dicoding_page_1.png" alt="Dicoding Belajar Dasar AI Certificate" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 cursor-pointer cert-preview-trigger" data-img="assets/images/sertifikat-dasar-ai-dicoding_page_1.png" data-pdf="assets/certificates/sertifikat-dasar-ai-dicoding.pdf" data-title="Belajar Dasar AI (Competency Certificate)" data-issuer="Dicoding Indonesia" data-id="L4PQWMRW4PO1" data-date="18 August 2026 (Valid thru 2029)">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                                
+                                <!-- Floating Badges -->
+                                <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800/90 border border-slate-600/40 text-slate-200 text-xs font-semibold backdrop-blur-md">
+                                    <i class="fa-solid fa-graduation-cap text-cyan-400"></i>
+                                    <span>Dicoding Academy</span>
+                                </div>
+                                <div class="absolute top-3.5 right-3.5 flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-400 text-xs font-mono backdrop-blur-md">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span>Verified 2029</span>
+                                </div>
+
+                                <!-- Quick Preview Overlay Button -->
+                                <button class="cert-preview-trigger absolute bottom-3 right-3 px-3 py-1.5 rounded-xl bg-slate-900/90 text-white text-xs font-medium border border-slate-700 hover:bg-cyan-500 hover:text-slate-950 transition-colors flex items-center gap-1.5 shadow-lg" data-img="assets/images/sertifikat-dasar-ai-dicoding_page_1.png" data-pdf="assets/certificates/sertifikat-dasar-ai-dicoding.pdf" data-title="Belajar Dasar AI (Competency Certificate)" data-issuer="Dicoding Indonesia" data-id="L4PQWMRW4PO1" data-date="18 August 2026 (Valid thru 2029)">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                    <span data-i18n="cert_btn_view">View Full</span>
+                                </button>
+                            </div>
+
+                            <!-- Card Body -->
+                            <div class="p-6">
+                                <div class="text-xs font-mono text-cyan-400 mb-2 flex items-center justify-between">
+                                    <span>ID: L4PQWMRW4PO1</span>
+                                    <span>18 Aug 2026</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors mb-2 leading-snug">
+                                    Belajar Dasar AI (AI Fundamentals Competency)
+                                </h3>
+                                <p class="text-slate-400 text-xs sm:text-sm line-clamp-3 mb-4">
+                                    Certified competency covering Artificial Intelligence fundamentals, Data for AI engineering, Machine Learning algorithms, and Deep Learning neural architectures.
+                                </p>
+
+                                <div class="flex items-center gap-2 text-xs text-slate-400 pt-3 border-t border-slate-800/80">
+                                    <i class="fa-solid fa-user-tie text-slate-500"></i>
+                                    <span>CEO Dicoding: <strong>Narenda Wicaksono</strong></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Footer Action Buttons -->
+                        <div class="p-6 pt-0 flex items-center gap-3">
+                            <a href="assets/certificates/sertifikat-dasar-ai-dicoding.pdf" target="_blank" class="flex-1 py-2.5 px-4 rounded-xl bg-cyan-500/10 hover:bg-cyan-500 text-cyan-300 hover:text-slate-950 border border-cyan-500/30 text-xs font-semibold text-center transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-file-pdf"></i>
+                                <span data-i18n="cert_btn_open_pdf">Open PDF Document</span>
+                            </a>
+                            <a href="assets/certificates/sertifikat-dasar-ai-dicoding.pdf" download="Certificate_Dicoding_AI_Zozi_Atul_Azimi.pdf" class="py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs transition-colors" title="Download PDF">
+                                <i class="fa-solid fa-download"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CERT 3: BISA AI (Artificial Intelligence) -->
+                    <div class="cert-card group bg-slate-900/80 border border-slate-800/90 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10 flex flex-col justify-between" data-category="ai">
+                        <div>
+                            <!-- Image Thumbnail Box -->
+                            <div class="relative overflow-hidden bg-slate-950 aspect-[4/3] border-b border-slate-800/80">
+                                <img src="assets/images/sertifikat-artificial-intlleligance_page_1.png" alt="BISA AI Artificial Intelligence Certificate" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 cursor-pointer cert-preview-trigger" data-img="assets/images/sertifikat-artificial-intlleligance_page_1.png" data-pdf="assets/certificates/sertifikat-artificial-intlleligance.pdf" data-title="Artificial Intelligence Course" data-issuer="BISA AI Academy" data-id="2026/506/68071" data-date="21 July 2026">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                                
+                                <!-- Floating Badges -->
+                                <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-950/80 border border-blue-600/40 text-blue-300 text-xs font-semibold backdrop-blur-md">
+                                    <i class="fa-solid fa-brain"></i>
+                                    <span>BISA AI Academy</span>
+                                </div>
+                                <div class="absolute top-3.5 right-3.5 flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-400 text-xs font-mono backdrop-blur-md">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span>Verified</span>
+                                </div>
+
+                                <!-- Quick Preview Overlay Button -->
+                                <button class="cert-preview-trigger absolute bottom-3 right-3 px-3 py-1.5 rounded-xl bg-slate-900/90 text-white text-xs font-medium border border-slate-700 hover:bg-cyan-500 hover:text-slate-950 transition-colors flex items-center gap-1.5 shadow-lg" data-img="assets/images/sertifikat-artificial-intlleligance_page_1.png" data-pdf="assets/certificates/sertifikat-artificial-intlleligance.pdf" data-title="Artificial Intelligence Course" data-issuer="BISA AI Academy" data-id="2026/506/68071" data-date="21 July 2026">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                    <span data-i18n="cert_btn_view">View Full</span>
+                                </button>
+                            </div>
+
+                            <!-- Card Body -->
+                            <div class="p-6">
+                                <div class="text-xs font-mono text-cyan-400 mb-2 flex items-center justify-between">
+                                    <span>ID: 2026/506/68071</span>
+                                    <span>21 Jul 2026</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors mb-2 leading-snug">
+                                    Artificial Intelligence Specialization
+                                </h3>
+                                <p class="text-slate-400 text-xs sm:text-sm line-clamp-3 mb-4">
+                                    Comprehensive asynchronous training on artificial intelligence algorithms, intelligent problem modeling, and scalable solution implementation.
+                                </p>
+
+                                <div class="flex items-center gap-2 text-xs text-slate-400 pt-3 border-t border-slate-800/80">
+                                    <i class="fa-solid fa-user-tie text-slate-500"></i>
+                                    <span>Head of Academy: <strong>Ir. M. Octaviano Pratama, M.Kom.</strong></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Footer Action Buttons -->
+                        <div class="p-6 pt-0 flex items-center gap-3">
+                            <a href="assets/certificates/sertifikat-artificial-intlleligance.pdf" target="_blank" class="flex-1 py-2.5 px-4 rounded-xl bg-cyan-500/10 hover:bg-cyan-500 text-cyan-300 hover:text-slate-950 border border-cyan-500/30 text-xs font-semibold text-center transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-file-pdf"></i>
+                                <span data-i18n="cert_btn_open_pdf">Open PDF Document</span>
+                            </a>
+                            <a href="assets/certificates/sertifikat-artificial-intlleligance.pdf" download="Certificate_BISA_AI_Zozi_Atul_Azimi.pdf" class="py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs transition-colors" title="Download PDF">
+                                <i class="fa-solid fa-download"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CERT 4: BISA AI (Dasar - Dasar Python) -->
+                    <div class="cert-card group bg-slate-900/80 border border-slate-800/90 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10 flex flex-col justify-between" data-category="python">
+                        <div>
+                            <!-- Image Thumbnail Box -->
+                            <div class="relative overflow-hidden bg-slate-950 aspect-[4/3] border-b border-slate-800/80">
+                                <img src="assets/images/sertifikat-dasar-python_page_1.png" alt="BISA AI Python Certificate" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 cursor-pointer cert-preview-trigger" data-img="assets/images/sertifikat-dasar-python_page_1.png" data-pdf="assets/certificates/sertifikat-dasar-python.pdf" data-title="Dasar - Dasar Python" data-issuer="BISA AI Academy" data-id="2026/249/68071" data-date="26 July 2026">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                                
+                                <!-- Floating Badges -->
+                                <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-950/80 border border-yellow-600/40 text-yellow-300 text-xs font-semibold backdrop-blur-md">
+                                    <i class="fa-brands fa-python"></i>
+                                    <span>Python Specialization</span>
+                                </div>
+                                <div class="absolute top-3.5 right-3.5 flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-400 text-xs font-mono backdrop-blur-md">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span>Verified</span>
+                                </div>
+
+                                <!-- Quick Preview Overlay Button -->
+                                <button class="cert-preview-trigger absolute bottom-3 right-3 px-3 py-1.5 rounded-xl bg-slate-900/90 text-white text-xs font-medium border border-slate-700 hover:bg-cyan-500 hover:text-slate-950 transition-colors flex items-center gap-1.5 shadow-lg" data-img="assets/images/sertifikat-dasar-python_page_1.png" data-pdf="assets/certificates/sertifikat-dasar-python.pdf" data-title="Dasar - Dasar Python" data-issuer="BISA AI Academy" data-id="2026/249/68071" data-date="26 July 2026">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                    <span data-i18n="cert_btn_view">View Full</span>
+                                </button>
+                            </div>
+
+                            <!-- Card Body -->
+                            <div class="p-6">
+                                <div class="text-xs font-mono text-cyan-400 mb-2 flex items-center justify-between">
+                                    <span>ID: 2026/249/68071</span>
+                                    <span>26 Jul 2026</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors mb-2 leading-snug">
+                                    Dasar - Dasar Python (Python Core Mastery)
+                                </h3>
+                                <p class="text-slate-400 text-xs sm:text-sm line-clamp-3 mb-4">
+                                    Deep dive into fundamental Python engineering, data structure manipulation, control flow logic, functions, and modular object-oriented paradigms.
+                                </p>
+
+                                <div class="flex items-center gap-2 text-xs text-slate-400 pt-3 border-t border-slate-800/80">
+                                    <i class="fa-solid fa-user-tie text-slate-500"></i>
+                                    <span>Head of Academy: <strong>Ir. M. Octaviano Pratama, M.Kom.</strong></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Footer Action Buttons -->
+                        <div class="p-6 pt-0 flex items-center gap-3">
+                            <a href="assets/certificates/sertifikat-dasar-python.pdf" target="_blank" class="flex-1 py-2.5 px-4 rounded-xl bg-cyan-500/10 hover:bg-cyan-500 text-cyan-300 hover:text-slate-950 border border-cyan-500/30 text-xs font-semibold text-center transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-file-pdf"></i>
+                                <span data-i18n="cert_btn_open_pdf">Open PDF Document</span>
+                            </a>
+                            <a href="assets/certificates/sertifikat-dasar-python.pdf" download="Certificate_Python_Zozi_Atul_Azimi.pdf" class="py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs transition-colors" title="Download PDF">
+                                <i class="fa-solid fa-download"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CERT 5: Technology Channel (Basic AI Course) -->
+                    <div class="cert-card group bg-slate-900/80 border border-slate-800/90 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10 flex flex-col justify-between" data-category="ai">
+                        <div>
+                            <!-- Image Thumbnail Box -->
+                            <div class="relative overflow-hidden bg-slate-950 aspect-[4/3] border-b border-slate-800/80">
+                                <img src="assets/images/sertificate-ai-learn_page_1.png" alt="Technology Channel Basic AI Certificate" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 cursor-pointer cert-preview-trigger" data-img="assets/images/sertificate-ai-learn_page_1.png" data-pdf="assets/certificates/sertificate-ai-learn.pdf" data-title="Basic AI Course" data-issuer="Technology Channel Pvt. Ltd." data-id="44f652a6-dd7e-5959-aac2-ec90f76af631" data-date="17 August 2026">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                                
+                                <!-- Floating Badges -->
+                                <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5 px-3 py-1 rounded-full bg-violet-950/80 border border-violet-600/40 text-violet-300 text-xs font-semibold backdrop-blur-md">
+                                    <i class="fa-solid fa-globe"></i>
+                                    <span>International Credential</span>
+                                </div>
+                                <div class="absolute top-3.5 right-3.5 flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-400 text-xs font-mono backdrop-blur-md">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span>Verified</span>
+                                </div>
+
+                                <!-- Quick Preview Overlay Button -->
+                                <button class="cert-preview-trigger absolute bottom-3 right-3 px-3 py-1.5 rounded-xl bg-slate-900/90 text-white text-xs font-medium border border-slate-700 hover:bg-cyan-500 hover:text-slate-950 transition-colors flex items-center gap-1.5 shadow-lg" data-img="assets/images/sertificate-ai-learn_page_1.png" data-pdf="assets/certificates/sertificate-ai-learn.pdf" data-title="Basic AI Course" data-issuer="Technology Channel Pvt. Ltd." data-id="44f652a6-dd7e-5959-aac2-ec90f76af631" data-date="17 August 2026">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                    <span data-i18n="cert_btn_view">View Full</span>
+                                </button>
+                            </div>
+
+                            <!-- Card Body -->
+                            <div class="p-6">
+                                <div class="text-xs font-mono text-cyan-400 mb-2 flex items-center justify-between">
+                                    <span>ID: 44f652a6...</span>
+                                    <span>17 Aug 2026</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors mb-2 leading-snug">
+                                    Basic AI Course (International Certificate)
+                                </h3>
+                                <p class="text-slate-400 text-xs sm:text-sm line-clamp-3 mb-4">
+                                    Completed with an outstanding track record under Technology Channel Pvt. Ltd. (Reg No: 335505/80/081) covering practical AI applied paradigms.
+                                </p>
+
+                                <div class="flex items-center gap-2 text-xs text-slate-400 pt-3 border-t border-slate-800/80">
+                                    <i class="fa-solid fa-user-tie text-slate-500"></i>
+                                    <span>Founder: <strong>Bishworaj Poudel</strong> (Technology Channel)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Footer Action Buttons -->
+                        <div class="p-6 pt-0 flex items-center gap-3">
+                            <a href="assets/certificates/sertificate-ai-learn.pdf" target="_blank" class="flex-1 py-2.5 px-4 rounded-xl bg-cyan-500/10 hover:bg-cyan-500 text-cyan-300 hover:text-slate-950 border border-cyan-500/30 text-xs font-semibold text-center transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-file-pdf"></i>
+                                <span data-i18n="cert_btn_open_pdf">Open PDF Document</span>
+                            </a>
+                            <a href="assets/certificates/sertificate-ai-learn.pdf" download="Certificate_Technology_Channel_Zozi_Atul_Azimi.pdf" class="py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs transition-colors" title="Download PDF">
+                                <i class="fa-solid fa-download"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Credential Summary Banner -->
+                <div class="mt-16 p-8 rounded-3xl bg-gradient-to-r from-cyan-950/40 via-indigo-950/40 to-slate-900 border border-cyan-500/30 backdrop-blur-xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+                    <div class="flex items-center gap-4 text-left">
+                        <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 text-2xl flex-shrink-0">
+                            <i class="fa-solid fa-file-shield"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white" data-i18n="cert_banner_title">All Certificates Backed by Original PDF Documents</h4>
+                            <p class="text-sm text-slate-300" data-i18n="cert_banner_desc">High-resolution PDF credentials are ready for direct recruiter verification and academic evaluation.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 w-full md:w-auto">
+                        <a href="#contact" class="w-full md:w-auto px-6 py-3 rounded-xl bg-cyan-400 text-slate-950 font-bold text-sm text-center hover:bg-cyan-300 shadow-lg shadow-cyan-400/20 transition-all" data-i18n="cert_banner_btn">
+                            Request Additional Details
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS & INNOVATIONS SHOWCASE -->
+        <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-950/60 border-t border-slate-800/60 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-emerald-400 font-mono text-sm tracking-wider uppercase bg-emerald-950/60 px-3.5 py-1 rounded-full border border-emerald-800/60" data-i18n="proj_badge">Innovation Showcase</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mt-4 mb-4" data-i18n="proj_heading">Featured Intelligent Projects</h2>
+                    <p class="text-slate-400 text-base" data-i18n="proj_lead">Real-world case studies, data science pipelines, and AI systems built following industry best practices.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="project-card rounded-3xl bg-slate-900/80 border border-slate-800 overflow-hidden hover:border-emerald-500/40 transition-all group flex flex-col justify-between">
+                        <div>
+                            <div class="h-48 bg-gradient-to-tr from-slate-950 to-emerald-950/30 p-6 flex flex-col justify-between border-b border-slate-800 relative overflow-hidden">
+                                <div class="absolute -right-8 -bottom-8 w-36 h-36 bg-emerald-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
+                                <div class="flex items-center justify-between relative z-10">
+                                    <span class="text-xs font-mono text-emerald-400 bg-emerald-950/80 px-2.5 py-1 rounded-md border border-emerald-800" data-i18n="proj1_tag">End-to-End ML</span>
+                                    <i class="fa-solid fa-network-wired text-slate-600 group-hover:text-emerald-400 transition-colors text-xl"></i>
+                                </div>
+                                <div class="relative z-10">
+                                    <h4 class="text-xl font-bold text-white" data-i18n="proj1_title">AI Predictive Intelligence Pipeline</h4>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-slate-400 text-sm leading-relaxed mb-4" data-i18n="proj1_desc">
+                                    An integrated data science pipeline for automated data wrangling, feature engineering, predictive model training, and accuracy evaluation.
+                                </p>
+                                <div class="flex flex-wrap gap-1.5 mb-2">
+                                    <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-800 text-slate-300">Python</span>
+                                    <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-800 text-slate-300">Scikit-Learn</span>
+                                    <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-800 text-slate-300">Pandas</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono">
+                                <span>Status: Production-Ready</span>
+                                <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-check mr-1"></i>Optimized</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card rounded-3xl bg-slate-900/80 border border-slate-800 overflow-hidden hover:border-cyan-500/40 transition-all group flex flex-col justify-between">
+                        <div>
+                            <div class="h-48 bg-gradient-to-tr from-slate-950 to-cyan-950/30 p-6 flex flex-col justify-between border-b border-slate-800 relative overflow-hidden">
+                                <div class="absolute -right-8 -bottom-8 w-36 h-36 bg-cyan-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
+                                <div class="flex items-center justify-between relative z-10">
+                                    <span class="text-xs font-mono text-cyan-400 bg-cyan-950/80 px-2.5 py-1 rounded-md border border-cyan-800" data-i18n="proj2_tag">Computer Vision / AI</span>
+                                    <i class="fa-solid fa-eye text-slate-600 group-hover:text-cyan-400 transition-colors text-xl"></i>
+                                </div>
+                                <div class="relative z-10">
+                                    <h4 class="text-xl font-bold text-white" data-i18n="proj2_title">Deep Vision Recognition Engine</h4>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-slate-400 text-sm leading-relaxed mb-4" data-i18n="proj2_desc">
+                                    Convolutional neural network for high-speed image classification and feature extraction from large-scale visual datasets.
+                                </p>
+                                <div class="flex flex-wrap gap-1.5 mb-2">
+                                    <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-800 text-slate-300">PyTorch</span>
+                                    <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-800 text-slate-300">OpenCV</span>
+                                    <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-800 text-slate-300">NumPy</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono">
+                                <span>Status: High Accuracy</span>
+                                <span class="text-cyan-400 font-semibold"><i class="fa-solid fa-check mr-1"></i>Validated</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card rounded-3xl bg-slate-900/80 border border-slate-800 overflow-hidden hover:border-indigo-500/40 transition-all group flex flex-col justify-between">
+                        <div>
+                            <div class="h-48 bg-gradient-to-tr from-slate-950 to-indigo-950/30 p-6 flex flex-col justify-between border-b border-slate-800 relative overflow-hidden">
+                                <div class="absolute -right-8 -bottom-8 w-36 h-36 bg-indigo-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
+                                <div class="flex items-center justify-between relative z-10">
+                                    <span class="text-xs font-mono text-indigo-400 bg-indigo-950/80 px-2.5 py-1 rounded-md border border-indigo-800" data-i18n="proj3_tag">NLP & Automation</span>
+                                    <i class="fa-solid fa-robot text-slate-600 group-hover:text-indigo-400 transition-colors text-xl"></i>
+                                </div>
+                                <div class="relative z-10">
+                                    <h4 class="text-xl font-bold text-white" data-i18n="proj3_title">Smart Document Intelligence Pipeline</h4>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-slate-400 text-sm leading-relaxed mb-4" data-i18n="proj3_desc">
+                                    Automated document parser and structured data extraction engine (PDF / JSON) built for high-throughput processing.
+                                </p>
+                                <div class="flex flex-wrap gap-1.5 mb-2">
+                                    <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-800 text-slate-300">Python 3.14</span>
+                                    <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-800 text-slate-300">PyMuPDF</span>
+                                    <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-800 text-slate-300">Automation</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono">
+                                <span>Status: Ultra Fast</span>
+                                <span class="text-indigo-400 font-semibold"><i class="fa-solid fa-check mr-1"></i>Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MILESTONES & ROADMAP -->
+        <section id="milestones" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-800/60 relative">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-violet-400 font-mono text-sm tracking-wider uppercase bg-violet-950/60 px-3.5 py-1 rounded-full border border-violet-800/60" data-i18n="ms_badge">Milestones & Progress</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mt-4 mb-4" data-i18n="ms_heading">Competency Roadmap & Milestones</h2>
+                    <p class="text-slate-400 text-base" data-i18n="ms_lead">Zozi Atul Azimi's journey of rapid growth in mastering next-generation technology.</p>
+                </div>
+
+                <!-- Vertical Timeline -->
+                <div class="relative border-l-2 border-slate-800 ml-4 sm:ml-32 space-y-12">
+                    
+                    <!-- Milestone 1 -->
+                    <div class="relative pl-8 sm:pl-10 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyan-400 ring-4 ring-slate-900 group-hover:scale-125 transition-transform"></div>
+                        <div class="sm:absolute sm:-left-32 sm:top-1 text-xs font-mono text-cyan-400 font-semibold mb-1 sm:mb-0">24 Aug 2026</div>
+                        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-cyan-500/30 transition-all">
+                            <h4 class="text-lg font-bold text-white">Microsoft Elevate Skill Sprint</h4>
+                            <p class="text-sm text-cyan-300 font-mono mt-0.5">End-to-End Data Science & AI Models</p>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-2">Completed specialized short course on engineering end-to-end data science pipelines into AI model solutions by Microsoft Indonesia.</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2 -->
+                    <div class="relative pl-8 sm:pl-10 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-indigo-400 ring-4 ring-slate-900 group-hover:scale-125 transition-transform"></div>
+                        <div class="sm:absolute sm:-left-32 sm:top-1 text-xs font-mono text-indigo-400 font-semibold mb-1 sm:mb-0">18 Aug 2026</div>
+                        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-indigo-500/30 transition-all">
+                            <h4 class="text-lg font-bold text-white">AI Fundamentals Competency Graduation</h4>
+                            <p class="text-sm text-indigo-300 font-mono mt-0.5">Dicoding Indonesia (Valid thru 2029)</p>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-2">Mastered Artificial Intelligence concepts, data for AI, fundamental machine learning models, and deep learning neural structures.</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3 -->
+                    <div class="relative pl-8 sm:pl-10 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-violet-400 ring-4 ring-slate-900 group-hover:scale-125 transition-transform"></div>
+                        <div class="sm:absolute sm:-left-32 sm:top-1 text-xs font-mono text-violet-400 font-semibold mb-1 sm:mb-0">17 Aug 2026</div>
+                        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-violet-500/30 transition-all">
+                            <h4 class="text-lg font-bold text-white">Basic AI Course Completion</h4>
+                            <p class="text-sm text-violet-300 font-mono mt-0.5">Technology Channel Pvt. Ltd.</p>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-2">Successfully graduated international AI course track with an outstanding track record.</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 4 -->
+                    <div class="relative pl-8 sm:pl-10 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-yellow-400 ring-4 ring-slate-900 group-hover:scale-125 transition-transform"></div>
+                        <div class="sm:absolute sm:-left-32 sm:top-1 text-xs font-mono text-yellow-400 font-semibold mb-1 sm:mb-0">26 Jul 2026</div>
+                        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-yellow-500/30 transition-all">
+                            <h4 class="text-lg font-bold text-white">Python Fundamentals Mastery</h4>
+                            <p class="text-sm text-yellow-300 font-mono mt-0.5">BISA AI Academy</p>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-2">In-depth training on algorithmic logic, control structures, data manipulation, and software engineering with Python.</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 5 -->
+                    <div class="relative pl-8 sm:pl-10 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-emerald-400 ring-4 ring-slate-900 group-hover:scale-125 transition-transform"></div>
+                        <div class="sm:absolute sm:-left-32 sm:top-1 text-xs font-mono text-emerald-400 font-semibold mb-1 sm:mb-0">21 Jul 2026</div>
+                        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-emerald-500/30 transition-all">
+                            <h4 class="text-lg font-bold text-white">Artificial Intelligence Specialization</h4>
+                            <p class="text-sm text-emerald-300 font-mono mt-0.5">BISA AI Academy</p>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-2">Completed asynchronous modules on AI systems architectures and applied machine intelligence.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT & CONNECT SECTION -->
+        <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-950/60 border-t border-slate-800/60 relative">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-cyan-400 font-mono text-sm tracking-wider uppercase bg-cyan-950/60 px-3.5 py-1 rounded-full border border-cyan-800/60" data-i18n="contact_badge">Get in Touch</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mt-4 mb-4" data-i18n="contact_heading">Let's Connect & Build Together</h2>
+                    <p class="text-slate-400 text-base" data-i18n="contact_lead">Interested in collaborating on AI research, data science projects, or exploring professional opportunities? Send a message.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                    <!-- Left: Contact Details -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="p-8 rounded-3xl bg-slate-900/80 border border-slate-800">
+                            <h3 class="text-xl font-bold text-white mb-6" data-i18n="contact_card_title">Communication Channels</h3>
+                            
+                            <div class="space-y-6">
+                                <!-- Email Channel Card -->
+                                <div class="flex items-start justify-between gap-4 p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors">
+                                    <div class="flex items-start gap-3.5">
+                                        <div class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-lg flex-shrink-0 mt-0.5">
+                                            <i class="fa-solid fa-envelope"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-[11px] text-slate-400 uppercase font-mono" data-i18n="contact_email_lbl">Direct Email</div>
+                                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=zoziazimi@gmail.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-400 font-medium text-sm transition-colors flex items-center gap-1.5 mt-0.5">
+                                                <span>zoziazimi@gmail.com</span>
+                                                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-cyan-400"></i>
+                                            </a>
+                                            <p class="text-xs text-slate-500 mt-0.5" data-i18n="contact_email_sub">Open directly in Gmail / Webmail</p>
+                                        </div>
+                                    </div>
+                                    <button id="copy-email-btn" data-email="zoziazimi@gmail.com" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 hover:border-cyan-500/50 text-xs font-mono text-slate-300 hover:text-cyan-300 transition-all flex items-center gap-1.5 flex-shrink-0" title="Copy Email">
+                                        <i class="fa-regular fa-copy"></i>
+                                        <span id="copy-email-text" data-i18n="contact_copy_btn">Copy</span>
+                                    </button>
+                                </div>
+
+                                <!-- LinkedIn Channel Card -->
+                                <div class="flex items-start justify-between gap-4 p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80 hover:border-indigo-500/40 transition-colors">
+                                    <div class="flex items-start gap-3.5">
+                                        <div class="w-11 h-11 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-lg flex-shrink-0 mt-0.5">
+                                            <i class="fa-brands fa-linkedin-in"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-[11px] text-slate-400 uppercase font-mono" data-i18n="contact_linkedin_lbl">LinkedIn Network</div>
+                                            <a href="https://www.linkedin.com/in/zozi-atul-azimi-1-656108404" target="_blank" rel="noopener noreferrer" class="text-white hover:text-indigo-400 font-medium text-sm transition-colors flex items-center gap-1.5 mt-0.5">
+                                                <span>zozi-atul-azimi</span>
+                                                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-indigo-400"></i>
+                                            </a>
+                                            <p class="text-xs text-slate-500 mt-0.5" data-i18n="contact_linkedin_sub">Professional network & endorsements</p>
+                                        </div>
+                                    </div>
+                                    <a href="https://www.linkedin.com/in/zozi-atul-azimi-1-656108404" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-indigo-950/40 border border-indigo-700/50 text-xs font-semibold text-indigo-300 hover:bg-indigo-600 hover:text-white transition-all flex items-center gap-1.5 flex-shrink-0">
+                                        <span data-i18n="contact_visit_btn">Visit</span>
+                                    </a>
+                                </div>
+
+                                <!-- GitHub Channel Card -->
+                                <div class="flex items-start justify-between gap-4 p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors">
+                                    <div class="flex items-start gap-3.5">
+                                        <div class="w-11 h-11 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-white text-lg flex-shrink-0 mt-0.5">
+                                            <i class="fa-brands fa-github"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-[11px] text-slate-400 uppercase font-mono" data-i18n="contact_github_lbl">GitHub Repositories</div>
+                                            <a href="https://github.com/Zozi0999" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-400 font-medium text-sm transition-colors flex items-center gap-1.5 mt-0.5">
+                                                <span>Zozi0999</span>
+                                                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-cyan-400"></i>
+                                            </a>
+                                            <p class="text-xs text-slate-500 mt-0.5" data-i18n="contact_github_sub">Explore open-source codebases</p>
+                                        </div>
+                                    </div>
+                                    <a href="https://github.com/Zozi0999" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition-all flex items-center gap-1.5 flex-shrink-0">
+                                        <span data-i18n="contact_visit_btn">Visit</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Availability Status Box -->
+                        <div class="p-6 rounded-3xl bg-emerald-950/20 border border-emerald-500/30 flex items-center gap-4">
+                            <div class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-emerald-300" data-i18n="contact_status_title">Open for New Challenges</h4>
+                                <p class="text-xs text-emerald-400/80" data-i18n="contact_status_desc">Available for AI Engineer, Data Scientist, and Python Developer roles.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Interactive Message Form -->
+                    <div class="lg:col-span-7">
+                        <form id="contact-form" class="p-8 rounded-3xl bg-slate-900/80 border border-slate-800 space-y-5 relative">
+                            <div id="form-feedback" class="hidden p-4 rounded-xl text-sm font-medium"></div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-mono text-slate-300 mb-2 uppercase" data-i18n="contact_form_name_lbl">Full Name *</label>
+                                    <input type="text" id="sender-name" required placeholder="Your Name" data-i18n-ph="contact_form_name_ph" class="w-full px-4 py-3.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400 transition-colors text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-mono text-slate-300 mb-2 uppercase" data-i18n="contact_form_email_lbl">Email Address *</label>
+                                    <input type="email" id="sender-email" required placeholder="name@company.com" data-i18n-ph="contact_form_email_ph" class="w-full px-4 py-3.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400 transition-colors text-sm">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 mb-2 uppercase" data-i18n="contact_form_subj_lbl">Subject / Topic</label>
+                                <input type="text" id="sender-subject" placeholder="AI Project Inquiry / Collaboration Offer" data-i18n-ph="contact_form_subj_ph" class="w-full px-4 py-3.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400 transition-colors text-sm">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 mb-2 uppercase" data-i18n="contact_form_msg_lbl">Your Message *</label>
+                                <textarea id="sender-message" required rows="5" placeholder="Describe your project or inquiry in detail here..." data-i18n-ph="contact_form_msg_ph" class="w-full px-4 py-3.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400 transition-colors text-sm resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 via-indigo-500 to-violet-600 text-white font-bold text-sm shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span data-i18n="contact_form_btn">Send Message Now</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800/80 bg-[#07090e] py-12 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center font-bold font-mono text-cyan-400 text-sm">
+                    Z
+                </div>
+                <div>
+                    <div class="text-sm font-bold text-white">Zozi Atul Azimi</div>
+                    <div class="text-xs text-slate-500" data-i18n="footer_copy">Digital Portfolio & AI Credentials Vault &copy; 2026</div>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6 text-sm text-slate-400">
+                <a href="#home" class="hover:text-cyan-400 transition-colors" data-i18n="nav_home">Home</a>
+                <a href="#about" class="hover:text-cyan-400 transition-colors" data-i18n="nav_about">About</a>
+                <a href="#certificates" class="hover:text-cyan-400 transition-colors" data-i18n="nav_certificates">Credentials</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors" data-i18n="nav_projects">Projects</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors" data-i18n="nav_contact">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-3 text-slate-400">
+                <a href="https://github.com/Zozi0999" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-cyan-400 hover:border-cyan-500/50 transition-all" title="GitHub">
+                    <i class="fa-brands fa-github text-sm"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/zozi-atul-azimi-1-656108404" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/50 transition-all" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in text-sm"></i>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=zoziazimi@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email" class="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-red-400 hover:border-red-500/50 transition-all" title="Send Email via Gmail Web">
+                    <i class="fa-solid fa-envelope text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CERTIFICATE LIGHTBOX / MODAL VIEWER -->
+    <div id="cert-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
+        <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl flex flex-col max-h-[92vh] animate-scale-up">
+            
+            <!-- Modal Header -->
+            <div class="p-5 sm:px-7 border-b border-slate-800 flex items-center justify-between bg-slate-950/80">
+                <div>
+                    <span id="modal-issuer" class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Institution</span>
+                    <h3 id="modal-title" class="text-base sm:text-lg font-bold text-white truncate max-w-xl">Certificate Title</h3>
+                </div>
+                <button id="modal-close" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Image Body (Scrollable) -->
+            <div class="p-4 sm:p-6 overflow-y-auto flex items-center justify-center bg-slate-950 flex-1 min-h-[300px]">
+                <img id="modal-img" src="" alt="Certificate Preview HD" class="max-h-[60vh] w-auto object-contain rounded-xl border border-slate-800 shadow-xl">
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-5 sm:px-7 border-t border-slate-800 bg-slate-950/80 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-slate-400">
+                <div class="flex items-center gap-4">
+                    <span><span data-i18n="modal_id_lbl">Credential ID:</span> <strong id="modal-id" class="text-cyan-300"></strong></span>
+                    <span><span data-i18n="modal_date_lbl">Date:</span> <strong id="modal-date" class="text-slate-300"></strong></span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a id="modal-pdf-link" href="#" target="_blank" class="px-4 py-2 rounded-xl bg-cyan-500 text-slate-950 font-bold hover:bg-cyan-400 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <span data-i18n="modal_btn_open">Open Original PDF</span>
+                    </a>
+                    <a id="modal-download-link" href="#" download="" class="px-4 py-2 rounded-xl bg-slate-800 text-white font-medium hover:bg-slate-700 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-download"></i>
+                        <span data-i18n="modal_btn_download">Download</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts: i18n Dictionary first, then Main Engine -->
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
